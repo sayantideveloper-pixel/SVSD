@@ -531,6 +531,96 @@
     .sliderarea14 {
       padding: 5px;
     }
+
+    /*overlay15series*/
+    .overlay15 {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: 99;
+      background: rgba(0, 0, 0, 0.175);
+    }
+
+    .slidecontainer15 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 558px;
+      width: 95%;
+      background: white;
+      z-index: 999;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .sliderheader15 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .btnclosepop15 {
+      font-size: 16px;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      background: darkblue;
+      text-align: center;
+      line-height: 20px;
+      color: white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .sliderarea15 {
+      padding: 5px;
+    }
+
+    /* Keep all images in new popup same frame size and properly fitted */
+    #mycarousel15 .item {
+      width: 100%;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #f5f7fa;
+    }
+
+    #mycarousel15 .owl-stage-outer,
+    #mycarousel15 .owl-stage,
+    #mycarousel15 .owl-item {
+      height: 420px;
+    }
+
+    #mycarousel15 .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    @media (max-width: 767px) {
+      #mycarousel15 .item {
+        height: 300px;
+      }
+
+      #mycarousel15 .owl-stage-outer,
+      #mycarousel15 .owl-stage,
+      #mycarousel15 .owl-item {
+        height: 300px;
+      }
+    }
+
+    /* Top/bottom fade on new workshop banner */
+    .vehicle-banner-wrap img {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-86SF08X1GB"></script>
   <script>
@@ -2750,6 +2840,30 @@
                               <div class="row">
                                 <div class="col-md-4">
                                   <div class="edu2_cur_wrap">
+                                    <figure class="vehicle-banner-wrap">
+                                      <img src="images/mechanical/report/banner.jpeg" alt="">
+                                      <figcaption>
+
+                                        <!-- See More Link -->
+                                        <a href="#" id="mysemore15">See More</a>
+
+                                        <!-- Popup Modal -->
+
+                                      </figcaption>
+                                    </figure>
+                                    <div class="edu2_cur_des">
+
+                                      <h6 class="card-title">Vehicle Deconstruction Workshop: From Junk to Jewels</h6>
+
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <div class="edu2_cur_wrap">
                                     <figure>
                                       <img src="images/mechanical/knowteq/1.jpg" alt="">
                                       <figcaption>
@@ -4302,6 +4416,48 @@
   </div>
   <!-- pop14 -->
 
+  <!-- pop15-->
+  <div class="overlay15" style="display: none;"></div>
+  <div class="slidecontainer15" style="display: none;">
+    <div class="sliderheader15">
+      <span>&nbsp;</span>
+      <span class="btnclosepop15">&times;</span>
+    </div>
+    <div class="sliderarea15">
+      <div class="owl-carousel owl-theme" id="mycarousel15">
+        <div class="item">
+          <img src="images/mechanical/report/image1.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/Image_2.jpg.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/image3.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/image4.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/Image_5.jpg.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/image7.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/Image_8.jpg.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/Image.jpg.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="images/mechanical/report/image10.jpeg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- pop15 -->
+
   <!-- gallery 1 -->
   <script>
     //Get the button
@@ -4579,6 +4735,22 @@
     })
   </script>
 
+  <script>
+    const closebrns15 = document.querySelector('.btnclosepop15');
+    const slidecontainer15 = document.querySelector('.slidecontainer15');
+    const togleshadow15 = document.querySelector('.overlay15');
+    const popbtn15 = document.getElementById('mysemore15');
+    popbtn15.addEventListener("click", function () {
+      slidecontainer15.style.display = 'block';
+      togleshadow15.style.display = 'block';
+    });
+
+    closebrns15.addEventListener("click", function () {
+      slidecontainer15.style.display = 'none';
+      togleshadow15.style.display = 'none';
+    })
+  </script>
+
  
 
 <script>
@@ -4749,6 +4921,30 @@
 
   <script>
     $('#mycarousel14').owlCarousel({
+      loop: true,
+      margin: 0,
+      items: 1,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        600: {
+          items: 1,
+          nav: false
+        },
+        1000: {
+          items: 1,
+          nav: true,
+          loop: false
+        }
+      }
+    })
+  </script>
+
+  <script>
+    $('#mycarousel15').owlCarousel({
       loop: true,
       margin: 0,
       items: 1,
